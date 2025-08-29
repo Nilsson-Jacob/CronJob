@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: jNVENT EVENT
 on:
   schedule:
     # Runs Mon–Fri at 14:05 UTC = 16:05 CEST
