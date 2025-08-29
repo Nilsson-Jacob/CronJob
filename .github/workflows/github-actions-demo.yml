@@ -12,9 +12,9 @@ jobs:
       - name: Call first endpoint
         run: |
           curl -s -w "\nHTTP Status: %{http_code}\n" \
-            "https://your-service.onrender.com/cron/task-one"
+            "https://stonjarliserver.onrender.com/account"
 
       - name: Call second endpoint
         run: |
           curl -s -w "\nHTTP Status: %{http_code}\n" \
-            "https://your-service.onrender.com/cron/task-two"
+            "https://stonjarliserver.onrender.com/runStrat"
