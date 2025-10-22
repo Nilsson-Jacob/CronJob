@@ -1,8 +1,7 @@
 name: jNVENT EVENT
 on:
   schedule:
-    # Runs Mon–Fri at 14:05 UTC = 16:05 CEST
-    - cron: '5 14 * * 1-5'
+    - cron: '32 14 * * 1-5'
   workflow_dispatch: # optional: allows manual trigger
 
 jobs:
