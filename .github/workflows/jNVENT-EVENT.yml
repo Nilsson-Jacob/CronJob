@@ -1,19 +1,29 @@
 name: jNVENT EVENT
+
 on:
+  workflow_dispatch: # optional manual trigger
+
   schedule:
-    - cron: '32 14 * * 1-5'
-  workflow_dispatch: # optional: allows manual trigger
+    # === US Winter Time (EST, UTC-5) ===
+    # Runs at 9:32 AM ET → 14:32 UTC
+    - cron: '32 14 * 11,12,1,2,3 1-5'  
+
+    # === US Summer Time (EDT, UTC-4) ===
+    # Runs at 9:32 AM ET → 13:32 UTC
+    - cron: '32 13 * 4,5,6,7,8,9,10 1-5'
 
 jobs:
   call-endpoints:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Call first endpoint
+      - name: Call account endpoint
         run: |
           curl -s -w "\nHTTP Status: %{http_code}\n" \
             "https://stonjarliserver.onrender.com/account"
 
-      - name: Call second endpoint
+      - name: Call runStrat endpoint
         run: |
           curl -s -w "\nHTTP Status: %{http_code}\n" \
             "https://stonjarliserver.onrender.com/runStrat"
+
