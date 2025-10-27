@@ -5,17 +5,12 @@ on:
 
   schedule:
     # === US Winter Time (EST, UTC-5) ===
-    # Once at 9:32 AM ET (14:32 UTC)
+    # Runs once at 9:32 AM ET → 14:32 UTC
     - cron: '32 14 * 11,12,1,2,3 1-5'
-    # Every 10m from 9:30 -> 16:00 ET  (14:30–21:00 UTC) Mon–Fri
-    - cron: '*/10 14-21 * 11,12,1,2,3 1-5'
 
     # === US Summer Time (EDT, UTC-4) ===
-    # Once at 9:32 AM ET (13:32 UTC)
+    # Runs once at 9:32 AM ET → 13:32 UTC
     - cron: '32 13 * 4,5,6,7,8,9,10 1-5'
-    # Every 10m from 9:30 -> 16:00 ET  (13:30–20:00 UTC) Mon–Fri
-    - cron: '*/10 13-20 * 4,5,6,7,8,9,10 1-5'
-
 
 jobs:
   call-endpoints:
