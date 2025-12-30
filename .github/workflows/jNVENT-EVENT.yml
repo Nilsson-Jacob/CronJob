@@ -1,4 +1,4 @@
-name: jNVENT EVENTs
+name: jNVENT EVENT
 
 on:
   workflow_dispatch: # optional manual trigger
